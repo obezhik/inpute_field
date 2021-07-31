@@ -1,0 +1,3 @@
+rootProject.name = "InputeField"
+include ':app'
+include ':inpute_field'

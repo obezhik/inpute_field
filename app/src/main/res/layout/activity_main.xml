@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.obezhik.inputefield.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <com.obezhik.inpute_field.CustomInputField
+            android:id="@+id/customInputField"
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+
+            app:textValue="@={viewModel.listValue}"
+
+            app:suffixText="$"
+            app:suffixTextColor="@color/purple_700"
+
+            app:helperText="You can adds to list clicked by 'add' icon."
+            app:hint="Price list"
+
+            app:startIconDrawable="@drawable/ic_baseline_add_24"
+            app:onStartIconOnClick="@{v -> viewModel.addToEntity()}"
+
+            app:entity="@{viewModel.entity}"
+
+            app:error="@{viewModel.errorList}"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+          />
+
+        <com.obezhik.inpute_field.CustomInputField
+            android:id="@+id/customInputField2"
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customInputField"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+
+            app:hint="Text"
+            app:error="@{viewModel.errorText}"
+
+            app:startIconDrawable="@drawable/ic_baseline_text_fields_24"
+            app:textValue="@={viewModel.textValue}" />
+
+        <com.obezhik.inpute_field.CustomInputField
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+
+            android:layout_marginTop="16dp"
+
+            android:layout_marginEnd="16dp"
+
+            app:helperText="Password helper"
+
+            app:hint="Password"
+            app:error="@{viewModel.errorPassword}"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/customInputField2"
+            app:passwordToggleEnable="true"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24"
+            app:textValue="@={viewModel.passwordValue}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomInputField">
+
+        <attr name="textValue" format="string"/>
+
+        <attr name="helperText"/>
+
+        <attr name="hint" format="string"/>
+
+        <attr name="clearIconDrawable" format="reference" />
+
+        <attr name="passwordToggleEnable" format="boolean" />
+
+        <attr name="startIconDrawable" />
+
+        <attr name="onStartIconOnClick" format="string"/>
+
+        <attr name="error" format="string"/>
+
+        <attr name="suffixText"/>
+
+        <attr name="suffixTextColor"/>
+
+        <attr name="prefixText"/>
+
+        <attr name="prefixTextColor"/>
+
+        <attr name="entity" format="reference|string"/>
+
+    </declare-styleable>
+
+</resources>
