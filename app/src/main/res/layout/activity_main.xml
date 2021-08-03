@@ -25,10 +25,10 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
 
-            app:textValue="@={viewModel.listValue}"
+            app:text="@={viewModel.listValue}"
 
             app:suffixText="$"
-            app:suffixTextColor="@color/purple_700"
+            app:suffixTextColor="#F44336"
 
             app:helperText="You can adds to list clicked by 'add' icon."
             app:hint="Price list"
@@ -60,8 +60,15 @@
             app:hint="Text"
             app:error="@{viewModel.errorText}"
 
+            app:startIconTint="#03A9F4"
             app:startIconDrawable="@drawable/ic_baseline_text_fields_24"
-            app:textValue="@={viewModel.textValue}" />
+            app:onStartIconOnClick="@{v -> viewModel.checkTextValid(v)}"
+
+            app:endIconTint="#E91E63"
+            app:endIconDrawable="@drawable/ic_baseline_check_24"
+            app:onEndIconOnClick="@{v -> viewModel.checkTextValid(v)}"
+
+            app:text="@={viewModel.textValue}"/>
 
         <com.obezhik.inpute_field.CustomInputField
             android:layout_width="0dp"
@@ -85,7 +92,7 @@
             app:layout_constraintTop_toBottomOf="@+id/customInputField2"
             app:passwordToggleEnable="true"
             app:startIconDrawable="@drawable/ic_baseline_lock_24"
-            app:textValue="@={viewModel.passwordValue}" />
+            app:text="@={viewModel.passwordValue}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

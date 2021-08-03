@@ -1,7 +1,10 @@
 package com.obezhik.inputefield
 
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.android.material.textfield.TextInputLayout
 
 class MainViewModel: ViewModel() {
 
@@ -19,6 +22,14 @@ class MainViewModel: ViewModel() {
         } else {
             entity.value?.add("104".plus(entity.value?.size))
         }
+    }
+
+    fun checkTextValid(v: View){
+        if (textValue.value.isNullOrEmpty()){
+            errorText.value = "Can`t be empty!"
+        }
+
+        Toast.makeText(v.context, "Success!", Toast.LENGTH_SHORT).show()
     }
 
 }

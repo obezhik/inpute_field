@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="CustomInputField">
 
-        <attr name="textValue" format="string"/>
+        <attr name="text" format="string"/>
 
         <attr name="helperText"/>
 
@@ -14,7 +14,15 @@
 
         <attr name="startIconDrawable" />
 
+        <attr name="endIconDrawable" />
+
+        <attr name="endIconTint" format="color" />
+
+        <attr name="startIconTint" format="color" />
+
         <attr name="onStartIconOnClick" format="string"/>
+
+        <attr name="onEndIconOnClick" format="string"/>
 
         <attr name="error" format="string"/>
 
