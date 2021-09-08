@@ -36,6 +36,8 @@
 
         <attr name="entity" format="reference|string"/>
 
+        <attr name="enabled" format="boolean"/>
+
     </declare-styleable>
 
 </resources>

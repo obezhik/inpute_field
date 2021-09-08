@@ -43,6 +43,8 @@ import com.google.android.material.textfield.TextInputLayout
     private var mEnablePasswordToggle = false
     private var isDropDawnList = false
 
+    private var enable = true
+
     private var mPrefixText = ""
     private var mPrefixTextColor = -1
 
@@ -93,6 +95,10 @@ import com.google.android.material.textfield.TextInputLayout
             0, 0).apply {
 
             try {
+
+               getBoolean(R.styleable.CustomInputField_enabled , true).let {
+                   enable = it
+               }
 
                getString(R.styleable.CustomInputField_text)?.let {
                    mText = it
@@ -232,6 +238,8 @@ import com.google.android.material.textfield.TextInputLayout
 
         setText(mText)
 
+        isEnabled = enable
+
         inputType = if (mEnablePasswordToggle){
                 InputType.TYPE_TEXT_VARIATION_PASSWORD
         } else if (isDropDawnList) {
@@ -240,6 +248,7 @@ import com.google.android.material.textfield.TextInputLayout
                 InputType.TYPE_CLASS_TEXT
                 InputType.TYPE_TEXT_FLAG_IME_MULTI_LINE
         }
+
 
     }
 
