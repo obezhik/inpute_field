@@ -58,7 +58,7 @@
             android:layout_marginEnd="16dp"
 
             app:hint="Text"
-            app:error="@{viewModel.errorText}"
+
 
             app:startIconTint="#03A9F4"
             app:startIconDrawable="@drawable/ic_baseline_text_fields_24"

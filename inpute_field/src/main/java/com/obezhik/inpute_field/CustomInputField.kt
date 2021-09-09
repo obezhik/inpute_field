@@ -174,6 +174,7 @@ import com.google.android.material.textfield.TextInputLayout
 
     private fun initInputLayout() = inputLayout.apply {
 
+
             if (mEnablePasswordToggle){
                 endIconMode = TextInputLayout.END_ICON_PASSWORD_TOGGLE
             }
@@ -191,14 +192,17 @@ import com.google.android.material.textfield.TextInputLayout
 
             hint = mHint
 
-            mHelper.takeIf { isNotEmpty() }.let {
+           mHelper.takeIf { isNotEmpty() }.let {
                 helperText = it
             }
 
-            mError.takeIf { isNotEmpty() }.let {
-                error = it
+            if (mError.isNotEmpty()){
+                error = mError
                 isErrorEnabled = true
+            }else {
+                isErrorEnabled = false
             }
+
 
             mSuffixText.takeIf { isNotEmpty() }.also {
                 suffixText = it

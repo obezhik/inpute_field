@@ -38,6 +38,8 @@
 
         <attr name="enabled" format="boolean"/>
 
+        <attr name="inputType" format="flags"/>
+
     </declare-styleable>
 
 </resources>
